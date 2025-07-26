@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MotionMedia Audiobook</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0059ff, #00d0ff);
+      color: white;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      perspective: 1000px;
+    }
+
+    .card {
+      background: rgba(0, 25, 55, 0.9);
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 25px 40px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      transform: rotateY(5deg) rotateX(5deg);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotateY(5deg) rotateX(5deg);
+      }
+      50% {
+        transform: translateY(-10px) rotateY(0deg) rotateX(0deg);
+      }
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.7;
+    }
+
+    .highlight {
+      color: #00ffff;
+      font-weight: bold;
+      background: rgba(0, 255, 255, 0.2);
+      padding: 2px 6px;
+      border-radius: 6px;
+      box-shadow: 0 0 8px #00ffff80;
+    }
+
+    .loading {
+      margin-top: 25px;
+      font-size: 1.5em;
+      font-weight: bold;
+      opacity: 0;
+      animation: fadein 1.5s forwards;
+      animation-delay: 8.5s;
+    }
+
+    @keyframes fadein {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .wave-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/symphony.png');
+      opacity: 0.03;
+      z-index: 0;
+    }
+
+    .audio-icon {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: 0.9em;
+      color: #ffffff99;
+    }
+  </style>
+</head>
+<body>
+  <div class="wave-bg"></div>
+
+  <div class="card">
+    <h1>Welcome to our Audiobook Platform</h1>
+    <p>
+      ইউজার অপশনে <span class="highlight">Free</span> বসিয়ে  
+      <span class="highlight">Sign In</span> অপশনে ক্লিক করুন,<br>
+      পাসওয়ার্ড বসানোর প্রয়োজন নেই।
+    </p>
+    <div class="loading">Loading MotionMedia...</div>
+  </div>
+
+  <div class="audio-icon">🎧 Powered by MotionMedia</div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.opacity = '1';
+    }, 8500);
+
+    setTimeout(() => {
+      window.location.href = "https://motionmedia.motioncut.xyz";
+    }, 9000);
+  </script>
+</body>
+</html>
